@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.1180" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-03-02T23:27:02" tests="0" file="cypress/integration/api-test/lambda-api-test.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Lambda function API Endpoints Using Cypress" timestamp="2022-03-02T23:27:02" tests="2" time="0.1180" failures="0">
+    <testcase name="Lambda function API Endpoints Using Cypress Test Loginaction Request" time="0.0590" classname="Test Loginaction Request">
+    </testcase>
+    <testcase name="Lambda function API Endpoints Using Cypress Test Sumaction Request" time="0.0590" classname="Test Sumaction Request">
+    </testcase>
+  </testsuite>
+</testsuites>

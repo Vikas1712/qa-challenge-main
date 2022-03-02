@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-02T23:33:22.502Z",
+    "end": "2022-03-02T23:33:22.708Z",
+    "duration": 206,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "edcb382a-c98d-495e-8dff-8692de059c1a",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "601ce3fc-765f-4fbb-a6bb-048b4e22a833",
+          "title": "Lambda function API Endpoints Using Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Loginaction Request",
+              "fullTitle": "Lambda function API Endpoints Using Cypress Test Loginaction Request",
+              "timedOut": null,
+              "duration": 96,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'http://localhost:3000/loginaction',\n  headers: {\n    'username': 'bob',\n    'password': 'P@55w0rd'\n  }\n}).then(res => {\n  //cy.log(JSON.stringify(res))\n  expect(res.status).to.equal(200);\n  expect(res.body).has.property('result', 'G7T0K3N');\n  expect(res.body).to.have.property('result', 'G7T0K3N');\n  token = res.body.result;\n  cy.log(\"Token \" + res.body.result);\n});",
+              "err": {},
+              "uuid": "8372f8fb-892d-4869-a5b8-e007efa3e488",
+              "parentUUID": "601ce3fc-765f-4fbb-a6bb-048b4e22a833",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test Sumaction Request",
+              "fullTitle": "Lambda function API Endpoints Using Cypress Test Sumaction Request",
+              "timedOut": null,
+              "duration": 65,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'http://localhost:3000/sumaction',\n  headers: {\n    'token': token\n  },\n  body: {\n    \"first\": 333,\n    \"second\": 444\n  }\n}).should(response => {\n  // cy.log(JSON.stringify(response))\n  expect(response.status).to.equal(200);\n  expect(response.body).to.have.property('result', 777);\n  cy.log(\"result \" + response.body.result);\n});",
+              "err": {},
+              "uuid": "b04becc0-5e2a-4fef-b842-f6fae2f1a77c",
+              "parentUUID": "601ce3fc-765f-4fbb-a6bb-048b4e22a833",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8372f8fb-892d-4869-a5b8-e007efa3e488",
+            "b04becc0-5e2a-4fef-b842-f6fae2f1a77c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 161,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.1.0"
+    }
+  }
+}
